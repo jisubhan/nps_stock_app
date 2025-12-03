@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/stock.dart';
+import '../config/api_config.dart';
 
 class NpsApiService {
-  // 로컬 Python 서버 API
-  static const String localServerUrl = 'http://localhost:5001';
+  // API 서버 URL (환경에 따라 자동 선택)
+  static String get baseUrl => ApiConfig.baseUrl;
 
   // 연기금(국민연금 포함) Top5 주식 데이터 가져오기
   Future<List<Stock>> getTop5Stocks() async {
@@ -29,7 +30,7 @@ class NpsApiService {
   Future<List<Stock>> _fetchFromLocalServer() async {
     try {
       final response = await http.get(
-        Uri.parse('$localServerUrl/api/nps/top5'),
+        Uri.parse('$baseUrl/api/nps/top5'),
       );
 
       if (response.statusCode == 200) {

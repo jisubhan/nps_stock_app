@@ -186,8 +186,11 @@ def health_check():
     })
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5001))
+
     print('🚀 NPS Stock API Server starting...')
     print('📊 pykrx를 사용하여 국민연금 데이터를 제공합니다')
-    print('🌐 Server: http://localhost:5001')
-    print('📡 API: http://localhost:5001/api/nps/top5')
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    print(f'🌐 Server: http://0.0.0.0:{port}')
+    print(f'📡 API: http://0.0.0.0:{port}/api/nps/top5')
+    app.run(host='0.0.0.0', port=port, debug=False)
