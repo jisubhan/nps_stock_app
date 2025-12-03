@@ -2,7 +2,7 @@ class ApiConfig {
   // 환경에 따른 API URL 설정
   static const String _productionUrl = String.fromEnvironment(
     'API_URL',
-    defaultValue: 'https://your-app-name.up.railway.app',  // Railway 배포 후 여기에 실제 URL 입력
+    defaultValue: 'https://npsstockapp-production.up.railway.app',
   );
 
   static const String _developmentUrl = 'http://localhost:5001';
