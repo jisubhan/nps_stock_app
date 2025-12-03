@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';  // TODO: 앱 출시 후 AdMob 활성화
 import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MobileAds.instance.initialize();
+  // TODO: 앱 출시 후 AdMob 초기화 활성화
+  // await MobileAds.instance.initialize();
   runApp(const MyApp());
 }
 

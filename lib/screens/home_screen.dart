@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/stock.dart';
 import '../services/nps_api_service.dart';
 import '../widgets/stock_card.dart';
-import '../widgets/banner_ad_widget.dart';
+// import '../widgets/banner_ad_widget.dart';  // TODO: 앱 출시 후 AdMob 활성화
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,11 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          '국민연금 주식 매수 TOP 5',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -61,12 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: _buildBody(),
-      bottomNavigationBar: Container(
-        color: Colors.white,
-        child: const SafeArea(
-          child: BannerAdWidget(),
-        ),
-      ),
+      // TODO: 앱 출시 후 AdMob 활성화
+      // bottomNavigationBar: Container(
+      //   color: Colors.white,
+      //   child: const SafeArea(
+      //     child: BannerAdWidget(),
+      //   ),
+      // ),
     );
   }
 
