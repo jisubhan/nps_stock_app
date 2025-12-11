@@ -1,4 +1,4 @@
-package com.example.nps_stock_app
+package com.npsstockfollow
 
 import io.flutter.embedding.android.FlutterActivity
 
